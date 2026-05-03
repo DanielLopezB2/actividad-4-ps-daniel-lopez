@@ -17,27 +17,6 @@ Autor: Daniel López Bedoya | Sprint 1-2
 | Autenticación | JWT (24h) + bcryptjs |
 | Calidad | ESLint + Prettier |
 
-## Estructura del proyecto
-
-```
-habitflow/
-├── backend/          # API REST (Node.js + Express)
-│   ├── src/
-│   │   ├── config/   # Conexión a MongoDB
-│   │   ├── controllers/
-│   │   ├── middleware/  # Autenticación JWT
-│   │   ├── models/   # Mongoose schemas
-│   │   └── routes/
-│   └── server.js
-├── frontend/         # SPA (React + Vite)
-│   ├── src/
-│   │   ├── components/
-│   │   ├── context/  # AuthContext
-│   │   ├── pages/
-│   │   └── services/ # Axios API client
-│   └── vite.config.js
-└── docs/             # Documentación del proyecto
-```
 
 ## Instalación y ejecución
 
