@@ -11,7 +11,12 @@ const habitRoutes = require('./src/routes/habits');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://habitflow-rosy-six.vercel.app',
+    'http://localhost:5173',
+  ],
+}));
 app.use(express.json());
 
 const swaggerOptions = {
