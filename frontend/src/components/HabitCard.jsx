@@ -42,7 +42,7 @@ export default function HabitCard({ habito, onEditar, onEliminar }) {
         <button onClick={() => onEditar(habito)} style={styles.btnEdit}>
           Editar
         </button>
-        <button onClick={() => onEliminar(habito._id)} style={styles.btnDelete}>
+        <button onClick={() => onEliminar(habito.id)} style={styles.btnDelete}>
           Eliminar
         </button>
       </div>

@@ -32,8 +32,8 @@ export default function Dashboard() {
     setGuardando(true);
     try {
       if (habitoEditar) {
-        const res = await habitService.actualizar(habitoEditar._id, datos);
-        setHabitos((prev) => prev.map((h) => (h._id === habitoEditar._id ? res.data.habito : h)));
+        const res = await habitService.actualizar(habitoEditar.id, datos);
+        setHabitos((prev) => prev.map((h) => (h.id === habitoEditar.id ? res.data.habito : h)));
       } else {
         const res = await habitService.crear(datos);
         setHabitos((prev) => [res.data.habito, ...prev]);
@@ -51,7 +51,7 @@ export default function Dashboard() {
     if (!confirm('¿Eliminar este hábito?')) return;
     try {
       await habitService.eliminar(id);
-      setHabitos((prev) => prev.filter((h) => h._id !== id));
+      setHabitos((prev) => prev.filter((h) => h.id !== id));
     } catch {
       setError('No se pudo eliminar el hábito.');
     }
@@ -103,7 +103,7 @@ export default function Dashboard() {
       ) : (
         <div style={styles.grid}>
           {habitos.map((h) => (
-            <HabitCard key={h._id} habito={h} onEditar={handleEditar} onEliminar={handleEliminar} />
+            <HabitCard key={h.id} habito={h} onEditar={handleEditar} onEliminar={handleEliminar} />
           ))}
         </div>
       )}
