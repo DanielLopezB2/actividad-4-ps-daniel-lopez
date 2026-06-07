@@ -41,7 +41,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/habits', habitRoutes);
 app.get('/api/health', (_, res) => res.json({ estado: 'OK', db: 'SQLite', version: '1.0.0' }));
 
-app.use((err, req, res, next) => {
+app.use((err, req, res, _next) => {
   console.error(err.stack);
   res.status(500).json({ mensaje: 'Error interno del servidor.' });
 });
