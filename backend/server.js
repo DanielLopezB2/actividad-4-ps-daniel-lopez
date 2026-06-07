@@ -47,4 +47,8 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Servidor HabitFlow corriendo en puerto ${PORT}`));
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`Servidor HabitFlow corriendo en puerto ${PORT}`));
+}
+
+module.exports = app;
